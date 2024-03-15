@@ -5,7 +5,10 @@ import '../styles/homepage.css';
 function Homepage() {
     return (
         <>
-            <img src={CrisFoto} alt='Foto Cris Mendes' />
+            <div className='homepage-wrapper'>
+                <h1>Coloração Pessoal</h1>
+                <img src={CrisFoto} alt='Foto Cris Mendes' />
+            </div>
         </>
     );
 }

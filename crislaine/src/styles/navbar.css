@@ -1,9 +1,13 @@
 .navbar-wrapper {
-    width: 100%;
+    width: 100vw;
     display: flex;
-    justify-content: space-around;
+    gap: 1em;
     border: 1px solid rgb(37, 186, 216);
     border-radius: 0.5em;
     padding: 0.5em;
     margin-bottom: 1em;
+    font-size: small;
+    flex-shrink: 0;
+    justify-content: center;
 }
+/* width: calc(100vw - 17px); */

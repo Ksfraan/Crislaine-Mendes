@@ -1,3 +1,18 @@
-img {
+.homepage-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.homepage-wrapper img {
     height: 30em;
+    width: calc(100vw - 17px);
+}
+
+.homepage-wrapper h1 {
+    justify-content: center;
+    margin-bottom: 0.5em;
+    color: rgb(37, 186, 216);
 }

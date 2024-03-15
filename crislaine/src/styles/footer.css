@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.footer-lists-icons {
+    display: flex;
+    list-style: none;
+}
+
+.footer-lists-icons img {
+    width: 2em;
+    height: 2em;
+    object-fit: cover;
+    margin-left: 0.9em;
+}
