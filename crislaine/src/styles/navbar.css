@@ -1,13 +1,22 @@
 .navbar-wrapper {
-    width: 100vw;
+    width: calc(100vw - 30px);
     display: flex;
-    gap: 1em;
-    border: 1px solid rgb(37, 186, 216);
-    border-radius: 0.5em;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    font-size: small;
-    flex-shrink: 0;
+    justify-content: flex-end;
+}
+
+.burger-button {
+    display: flex;
+    background-color: white;
     justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    margin-top: 0.6em;
+    cursor: pointer;
+}
+
+.burger-button img {
+    width: 3em;
+    height: 3em;
+    border-radius: 10em;
 }
 /* width: calc(100vw - 17px); */

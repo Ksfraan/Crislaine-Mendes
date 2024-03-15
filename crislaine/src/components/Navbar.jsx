@@ -1,15 +1,15 @@
+import BurguerButton from './BurguerButton';
+
 import '../styles/navbar.css';
 
-function Navbar() {
+const Navbar = () => {
     return (
         <>
             <div className='navbar-wrapper'>
-                <div>Coloração pessoal</div>
-                <div>Visagismo</div>
-                <div>Personal stiling</div>
+                <BurguerButton />
             </div>
         </>
     );
-}
+};
 
 export default Navbar;

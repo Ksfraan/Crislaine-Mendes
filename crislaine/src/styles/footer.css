@@ -1,17 +1,21 @@
 .footer {
+    width: 100vw;
     display: flex;
     width: 100%;
     justify-content: center;
+    background-color: #e99247;
+    padding: 3em 0 3em 0;
 }
 
 .footer-lists-icons {
+    width: 100vw;
     display: flex;
     list-style: none;
+    justify-content: space-around;
 }
 
 .footer-lists-icons img {
     width: 2em;
     height: 2em;
     object-fit: cover;
-    margin-left: 0.9em;
 }

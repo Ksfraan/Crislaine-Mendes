@@ -9,7 +9,7 @@ import whatsAppIcon from '../assets/whatsAppIcon.png';
 import youtubeIcon from '../assets/youtubeIcon.png';
 import telegramIcon from '../assets/telegramIcon.png';
 
-function Footer() {
+const Footer = () => {
     return (
         <div className='footer'>
             <div>
@@ -39,6 +39,6 @@ function Footer() {
             </div>
         </div>
     );
-}
+};
 
 export default Footer;

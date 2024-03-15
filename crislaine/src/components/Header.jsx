@@ -1,14 +1,19 @@
 import CrisLogo from '../assets/crisMendes.png';
+import Navbar from './Navbar';
+
 import '../styles/header.css';
 
-function Header() {
+const Header = () => {
     return (
-        <img
-            src={CrisLogo}
-            alt='Cris Mendes Logo'
-            className='cris-mendes-header-logo'
-        />
+        <div className='header-wrapper'>
+            <Navbar />
+            <img
+                src={CrisLogo}
+                alt='Cris Mendes Logo'
+                className='cris-mendes-header-logo'
+            />
+        </div>
     );
-}
+};
 
 export default Header;
