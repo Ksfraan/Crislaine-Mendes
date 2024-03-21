@@ -6,11 +6,11 @@ const Homepage = () => {
     return (
         <>
             <div className='homepage-wrapper'>
-                <h5>QUEM SOU EU?</h5>
+                <h5 className='ola-cris-mendes-text'>
+                    OLÁ! PRAZER, EU SOU A CRIS!
+                </h5>
                 <img src={CrisFoto} alt='Foto Cris Mendes' />
-                <p className='ola-cris-mendes-text'>
-                    OLÁ! PRAZER, EU SOU A CRIS MENDES!{' '}
-                </p>
+
                 <p className='jornada-cris-text'>
                     Minha jornada na moda revelou não apenas um interesse, mas
                     uma paixão pelas cores e suas essências durante minha

@@ -12,14 +12,16 @@
     height: 30%;
     width: calc(100vw - 17px);
     padding: 1em;
-    border-radius: 5em;
+    box-shadow: 0px 4px 8px rgba(174, 74, 2, 0.774);
+    margin-bottom: 1.5em;
 }
 
 .homepage-wrapper h5 {
     justify-content: center;
+    text-align: center;
     margin-bottom: 0.5em;
-    color: #222222;
-    font-size: large;
+    color: #6d5638;
+    font-size: 3em;
 }
 
 .ola-cris-mendes-text {
