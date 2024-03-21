@@ -1,11 +1,15 @@
 .header-wrapper {
-    width: 100%;
+    width: calc(100vw - 2px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 .cris-mendes-header-logo {
-    height: 7%;
-    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6%;
+    width: 100%;
+    padding: 0 1em 0 1em;
 }

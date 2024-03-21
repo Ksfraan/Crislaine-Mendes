@@ -1,12 +1,12 @@
 h1,
 h2,
-h3,
-h5 {
+h3 {
     margin: 1em;
+    text-align: center;
 }
 
 .visagism-page-wrapper {
-    width: calc(100vw - 16px);
+    width: calc(100vw - 2px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,6 +19,7 @@ h5 {
     width: 100%;
     padding: 1em;
     box-shadow: 0px 4px 8px rgb(255, 255, 255);
+    border-radius: 2em;
 }
 
 .visagism-title-and-image-wrapper {
@@ -79,4 +80,9 @@ h5 {
     align-items: center;
     justify-content: center;
     padding-top: 1em;
+}
+
+.investiment-and-image h5 {
+    margin: 1em;
+    text-align: center;
 }

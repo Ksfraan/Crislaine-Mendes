@@ -1,19 +1,27 @@
-import Header from './Header';
-import Footer from './footer';
+import { Routes, Route } from 'react-router-dom';
 
-import Homepage from '../pages/Homepage';
+import Footer from './footer';
+import Header from './Header';
+import HomePage from '../pages/Homepage';
+import Visagismo from '../pages/VisagismoPage';
+import Coloracao from '../pages/ColoracaoPessoal';
+import ErrorPage from '../pages/ErrorPage';
 
 import '../styles/App.css';
-import Visagismo from '../pages/visagismo';
 
 const App = () => {
     return (
-        <>
+        <div>
             <Header />
-            <Homepage />
-            <Visagismo />
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/visagismo' element={<Visagismo />} />
+                <Route path='/coloracao' element={<Coloracao />} />
+
+                <Route path='*' element={<ErrorPage />} />
+            </Routes>
             <Footer />
-        </>
+        </div>
     );
 };
 

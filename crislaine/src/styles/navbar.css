@@ -1,5 +1,5 @@
 .navbar-wrapper {
-    width: calc(100vw - 30px);
+    width: calc(100vw - 15px);
     display: flex;
     justify-content: flex-end;
 }
@@ -18,5 +18,18 @@
     width: 3em;
     height: 3em;
     border-radius: 10em;
+}
+
+.visagismo-coloracao-links-wrapper {
+    background-color: #88c1dc;
+    padding: 0.8em;
+    border-radius: 0.5em;
+    color: #115270;
+}
+
+.visagismo-coloracao-links-wrapper a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
 }
 /* width: calc(100vw - 17px); */
