@@ -28,10 +28,12 @@ const PacoteJade = () => {
                     cabelos da sua cartela e a psicologia das cores. <br />
                     Cartela fásica. <br />
                     <br />
-                    PRAZO DE ENTREGA: 1 hora e meia para a Coloração pessoal SÃO
-                    PAULO E SOROCABA. <br />
+                    <b>PRAZO DE ENTREGA:</b> <br />1 hora e meia para a
+                    Coloração pessoal SÃO PAULO E SOROCABA e <br />
                     20 dias úteis para o visagismo. <br />
+                    <br />
                     <b>Ivestimento: </b>
+                    <br />
                     3x336,60 à vista: R$970,00
                 </p>
             </div>

@@ -28,7 +28,8 @@ const PacoteGold = () => {
                 <br />
                 <p>
                     3 meses de assessoria pós atendimento. <br />
-                    PRAZO DE ENTREGA: 12 dias úteis.
+                    <br />
+                    <b>PRAZO DE ENTREGA:</b> 12 dias úteis.
                 </p>{' '}
                 <br />
                 <p>

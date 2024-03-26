@@ -34,7 +34,9 @@ const PacoteAmetista = () => {
                 <br />
                 <br />
                 NÃO ESTA INCLUSO SIMULAÇÃO DE ÓCULOS. <br />
-                <br /> PRAZO DE ENTREGA: 10 dias úteis <br />
+                <br /> <b>PRAZO DE ENTREGA:</b> <br />
+                10 dias úteis <br />
+                <br />
                 <b>Investimento: </b> 3x R$210,00 <br />
                 crédito à vista: R$600,00 <br />à vista: R$580,00
             </div>

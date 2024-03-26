@@ -109,6 +109,7 @@
 }
 
 .pacote-ametista-wrapper {
+    background-color: #ffffff;
     text-align: center;
     align-items: center;
     line-height: 1.5em;
@@ -125,6 +126,7 @@
 }
 
 .pacote-ruby-wrapper {
+    background-color: #ffffff;
     text-align: center;
     align-items: center;
     line-height: 1.5em;
@@ -141,6 +143,7 @@
 }
 
 .pacote-jade-wrapper {
+    background-color: #ffffff;
     text-align: center;
     align-items: center;
     line-height: 1.5em;

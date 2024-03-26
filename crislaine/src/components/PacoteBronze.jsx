@@ -21,7 +21,7 @@ const PacoteBronze = () => {
                     cabelos da sua cartela e a psicologia das cores. <br />
                     Cartela digital da sua estação. <br />
                     <br />
-                    PRAZO DE ENTREGA: 7 dias úteis.
+                    <b>PRAZO DE ENTREGA:</b> 7 dias úteis.
                 </p>
             </div>
             <br />

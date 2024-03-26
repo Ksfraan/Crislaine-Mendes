@@ -5,6 +5,9 @@ import PacoteEsmeraldaVisagismo from '../components/PacoteEsmeraldaVisagismo';
 import PacoteQuartzoRosa from '../components/PacoteQuartzoRosa';
 
 import '../styles/visagismo.css';
+import PacoteAmetista from '../components/PacoteAmetista';
+import PacoteRuby from '../components/PacoteRuby';
+import PacoteJade from '../components/PacoteJade';
 
 const Visagismo = () => {
     return (
@@ -12,7 +15,6 @@ const Visagismo = () => {
             <h2>CONSULTORIA VISAGISMO SIMULADO</h2>
             <img src={visagismoImage} alt='Young lady' />
             <h1>PROPOSTA</h1>
-
             <div className='simulate-visagism-text'>
                 <h2>VISAGISMO SIMULADO</h2>
                 <p>
@@ -37,10 +39,15 @@ const Visagismo = () => {
                     MAQUIAGEM E ACESSÓRIOS QUE DESTACAM AS MELHORES
                     CARACTERÍSTICAS DE CADA PESSOA.
                 </p>
+            </div>{' '}
+            <div className='pacotes-visagismo-wrapper'>
+                <PacoteQuartzoRosa />
+                <PacoteCristalVisagismo />
+                <PacoteEsmeraldaVisagismo />
+                <PacoteAmetista />
+                <PacoteRuby />
+                <PacoteJade />
             </div>
-            <PacoteQuartzoRosa />
-            <PacoteCristalVisagismo />
-            <PacoteEsmeraldaVisagismo />
         </div>
     );
 };

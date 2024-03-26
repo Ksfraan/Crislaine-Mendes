@@ -37,7 +37,7 @@ const PacoteRuby = () => {
                     16 simulações de armações de óculos para o formato de rosto.{' '}
                     <br />
                     <br />
-                    PRAZO DE ENTREGA: <br />7 dias úteis para a Coloração
+                    <b>PRAZO DE ENTREGA:</b> <br />7 dias úteis para a Coloração
                     pessoal e
                     <br /> 20 dias úteis para o visagismo. <br />
                     <br />
