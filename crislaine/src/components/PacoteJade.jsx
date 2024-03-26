@@ -32,9 +32,9 @@ const PacoteJade = () => {
                     Coloração pessoal SÃO PAULO E SOROCABA e <br />
                     20 dias úteis para o visagismo. <br />
                     <br />
-                    <b>Ivestimento: </b>
+                    <b>Investimento: </b>
                     <br />
-                    3x336,60 à vista: R$970,00
+                    3x R$336,60 ou <br />à vista: R$970,00.
                 </p>
             </div>
         </div>

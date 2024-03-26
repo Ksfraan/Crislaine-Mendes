@@ -4,7 +4,7 @@ import Footer from './footer';
 import Header from './Header';
 import HomePage from '../pages/Homepage';
 import Visagismo from '../pages/VisagismoPage';
-import Coloracao from '../pages/ColoracaoPessoal';
+import Coloracao from '../pages/coloracaoPessoal';
 import ErrorPage from '../pages/ErrorPage';
 
 import '../styles/App.css';
