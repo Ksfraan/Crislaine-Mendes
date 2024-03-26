@@ -4,7 +4,8 @@ import '../styles/footer.css';
 import facebookIcon from '../assets/facebookIcon.png';
 import instagramIcon from '../assets/InstagramIcon.png';
 import whatsAppIcon from '../assets/whatsAppIcon.png';
-import telegramIcon from '../assets/telegramIcon.png';
+
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -12,18 +13,20 @@ const Footer = () => {
             <div>
                 <ul className='footer-lists-icons'>
                     <li>
-                        <img src={facebookIcon} alt='Facebook icon' />
+                        <Link to='https://www.facebook.com/profile.php?id=100081588880623'>
+                            <img src={facebookIcon} alt='Facebook icon' />
+                        </Link>
                     </li>
                     <li>
-                        <img src={instagramIcon} alt='Instagram icon' />
+                        <Link to='https://www.instagram.com/crislainemendess?igsh=MXRvZjBpMXR6NG01Mw=='>
+                            <img src={instagramIcon} alt='Instagram icon' />
+                        </Link>
                     </li>
 
                     <li>
-                        <img src={whatsAppIcon} alt='WhatsApp icon' />
-                    </li>
-
-                    <li>
-                        <img src={telegramIcon} alt='Telegram icon' />
+                        <Link to='https://wa.me/message/LOOIUNEXVDXBN1'>
+                            <img src={whatsAppIcon} alt='WhatsApp icon' />
+                        </Link>
                     </li>
                 </ul>
             </div>

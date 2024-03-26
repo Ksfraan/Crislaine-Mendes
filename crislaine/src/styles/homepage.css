@@ -1,5 +1,5 @@
 .homepage-wrapper {
-    width: calc(100vw - 2px);
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +34,6 @@
 .jornada-cris-text {
     line-height: 1.5em;
     color: #0b4354;
-    text-align: center;
-    text-justify: newspaper;
+
+    text-align: justify;
 }

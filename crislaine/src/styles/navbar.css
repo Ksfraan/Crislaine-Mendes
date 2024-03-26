@@ -8,23 +8,29 @@
     display: flex;
     background-color: white;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     border-radius: 2em;
     margin-top: 0.6em;
     cursor: pointer;
+    flex-direction: column-reverse;
+    position: absolute;
+    background-color: transparent;
 }
 
 .burger-button img {
     width: 3em;
     height: 3em;
     border-radius: 10em;
+    background-color: transparent;
 }
 
 .visagismo-coloracao-links-wrapper {
-    background-color: #88c1dc;
+    background-color: #0b4354;
     padding: 0.8em;
     border-radius: 0.5em;
     color: #115270;
+    line-height: 1.8em;
+    font-size: 1.3em;
 }
 
 .visagismo-coloracao-links-wrapper a {

@@ -14,11 +14,9 @@ const BurguerButton = () => {
         <button className='burger-button' onClick={toggleShowLinks}>
             {showLinks ? (
                 <div className='visagismo-coloracao-links-wrapper'>
-                    <Link to='/visagismo'>Visagismo</Link>
-                    {'  '}
-                    {' | '}
-                    <Link to='/coloracao'>Coloração Pessoal</Link> {' | '}
-                    {'  '}
+                    <Link to='/visagismo'>Visagismo Simulado</Link>
+                    <br />
+                    <Link to='/coloracao'>Coloração Pessoal</Link> <br />
                     <Link to='/'>Sobre mim</Link>
                 </div>
             ) : null}

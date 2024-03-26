@@ -6,7 +6,7 @@ h3 {
 }
 
 .visagism-page-wrapper {
-    width: calc(100vw - 2px);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,4 +85,55 @@ h3 {
 .investiment-and-image h5 {
     margin: 1em;
     text-align: center;
+}
+
+.pacote-cristal-wrapper {
+    background-color: #e5cebc;
+    color: #542f13;
+    text-align: center;
+    padding: 2em;
+    width: 100%;
+}
+
+.investimento-visagismo-cristal {
+    display: flex;
+    align-items: center;
+    padding-top: 2em;
+    justify-content: space-around;
+}
+
+.investimento-visagismo-cristal h5 {
+    margin: 1em;
+}
+
+.investimento-visagismo-cristal img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pacote-esmeralda-wrapper {
+    background-color: #347673;
+    color: #edf7e9;
+    text-align: center;
+    padding: 2em;
+    width: 100%;
+}
+
+.pacote-esmeralda-investimento {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.pacote-esmeralda-investimento img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pacote-esmeralda-investimento h5 {
+    margin: 1em;
 }

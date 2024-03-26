@@ -1,7 +1,7 @@
 .footer {
     width: 100vw;
+    min-height: 6em;
     display: flex;
-    width: 100%;
     justify-content: center;
     background-color: #0b4354;
     padding: 3em 0 3em 0;
@@ -18,4 +18,8 @@
     width: 2em;
     height: 2em;
     object-fit: cover;
+}
+
+.footer-lists-icons a {
+    cursor: pointer;
 }
