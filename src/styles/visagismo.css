@@ -125,6 +125,10 @@ h3 {
     width: 100%;
 }
 
+.pacote-esmeralda-wrapper ul {
+    list-style: none;
+}
+
 .pacote-esmeralda-investimento {
     display: flex;
     align-items: center;

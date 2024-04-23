@@ -1,44 +1,54 @@
-import '../styles/coloracaoPessoal.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import crisPhotoGreenDress from '../assets/crisPhotoGreenDress.png';
+import Payment from './Payment';
 
 const PacoteGold = () => {
+    const [pacoteGold, setPacoteGold] = useState(null);
+    const baseUrl = import.meta.env.VITE_API_URL;
+
+    useEffect(() => {
+        const fetchPacoteGold = async () => {
+            try {
+                const response = await axios.get(`${baseUrl}/pacote-gold`);
+                setPacoteGold(response.data[0]);
+            } catch (error) {
+                console.error('Erro ao buscar o pacote Gold:', error);
+            }
+        };
+
+        fetchPacoteGold();
+    }, []);
+
+    if (!pacoteGold) {
+        return <div>Carregando...</div>;
+    }
+
     return (
         <div className='pacote-gold-wrapper'>
-            <h3>PACOTE GOLD</h3>
-            <h5>
-                COLORAÇÃO PESSOAL ONLINE + SIMULAÇÃO DE 10 CORES DE CABELO NA
-                CARTELA
-            </h5>{' '}
-            <img src={crisPhotoGreenDress} alt='' />
+            <h3>{pacoteGold.titulo}</h3>
+            <img src={crisPhotoGreenDress} alt='Crislaine Photo' />
+            <h5>{pacoteGold.descricao}</h5>
             <div>
-                <p>
-                    Análise de Contraste, <br />
-                    Análise de profundidade, <br />
-                    Analise de intensidade, <br />
-                    Análise de estação das cores, explicação do círculo
-                    cromático e como combinar cores. <br />
-                    Dossiê com cartela digital, <br />
-                    Inspiração de combinação de cores, maquiagem, looks e
-                    cabelos da sua cartela e a psicologia das cores. <br />
-                    Cartela digital da sua estação <br />
-                    10 simulações de cores de cabelo dentro da cartela de cores
-                    (tons loiros, iluminados, ruivos).
-                </p>{' '}
+                {pacoteGold.inclusos && pacoteGold.inclusos.length > 0 ? (
+                    pacoteGold.inclusos.map((item, index) => (
+                        <p key={index}>{item}</p>
+                    ))
+                ) : (
+                    <p>Falha ao carregar os itens do Pacote Gold.</p>
+                )}{' '}
                 <br />
                 <p>
-                    3 meses de assessoria pós atendimento. <br />
-                    <br />
-                    <b>PRAZO DE ENTREGA:</b> 12 dias úteis.
-                </p>{' '}
-                <br />
-                <p>
-                    <b>Investimento: </b> <br />
-                    3X R$234,00 no cartão de crédito, <br />
-                    R$680,00 credito à vista, <br />
-                    R$650,00 pix ou dinheiro.
+                    <b>Prazo de Entrega:</b> {pacoteGold.prazoEntrega}
                 </p>
+                <br />
+                <div>
+                    <b>Investimento:</b>
+                    <p>{pacoteGold.investimento}</p>
+                </div>
             </div>
+            <Payment />
         </div>
     );
 };

@@ -1,29 +1,52 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 import esmeralda from '../assets/esmeralda.jpeg';
 
-import '../styles/visagismo.css';
-
 const PacoteEsmeraldaVisagismo = () => {
+    const [pacoteEsmeralda, setPacoteEsmeralda] = useState(null);
+    const baseUrl = import.meta.env.VITE_API_URL;
+
+    useEffect(() => {
+        const fetchPacoteEsmeralda = async () => {
+            try {
+                const response = await axios.get(`${baseUrl}/pacote-esmeralda`);
+                setPacoteEsmeralda(response.data[0]);
+            } catch (error) {
+                console.error(
+                    'Erro ao buscar informações do pacote Esmeralda:',
+                    error
+                );
+            }
+        };
+
+        fetchPacoteEsmeralda();
+    }, []);
+
+    if (!pacoteEsmeralda) {
+        return <div>Carregando...</div>;
+    }
+
     return (
         <div className='pacote-esmeralda-wrapper'>
-            <h3>PACOTE ESMERALDA</h3>
+            <h3>{pacoteEsmeralda.titulo}</h3>
+            <p>{pacoteEsmeralda.descricao}</p>
+            <div>
+                <br />
+                <h4>Inclusos:</h4>
+                <ul>
+                    {pacoteEsmeralda.inclusos.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </ul>
+                <br />
+            </div>
             <p>
-                Nesse pacote irei te ajudar com o seu objetivo de imagem .
-                indicado para quem quer uma ajuda profissional para quem quer
-                fazer uma mudança estratégica. irei analisar a forma do seu
-                rosto , e simular 5 variações de corte de cabelo e 8 variações
-                de cores baseado na sua cartela caso você ja saiba sua coloração
-                pessoal e de forma aleatória para quem não sabe a cartela Inclui
-                também simulação de óculos ( no seu proprio rosto) e indicação
-                de penteados e acessórios e chamada de vídeo de 1h .
-            </p>
-            <br />
-            <p>
-                Inclusos: 5 simulação de corte 8 variações de cor PRAZO DE
-                ENTREGA 20 dias úteis para o visagismo.
+                <b>Prazo de Entrega:</b> {pacoteEsmeralda.prazoEntrega}
             </p>
             <br />
             <div className='pacote-esmeralda-investimento'>
-                <h5>Investimento 3x 220,00 à vista: R$630,00</h5>
+                <b>Investimento:</b> <p>{pacoteEsmeralda.investimento}</p>{' '}
                 <img src={esmeralda} alt='esmeralda image' />
             </div>
         </div>
