@@ -1,0 +1,25 @@
+.footer {
+    width: 100vw;
+    min-height: 6em;
+    display: flex;
+    justify-content: center;
+    background-color: #0b4354;
+    padding: 3em 0 3em 0;
+}
+
+.footer-lists-icons {
+    width: 100vw;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.footer-lists-icons img {
+    width: 2em;
+    height: 2em;
+    object-fit: cover;
+}
+
+.footer-lists-icons a {
+    cursor: pointer;
+}

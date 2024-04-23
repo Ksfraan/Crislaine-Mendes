@@ -1,0 +1,143 @@
+h1,
+h2,
+h3 {
+    margin: 1em;
+    text-align: center;
+}
+
+.visagism-page-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.visagism-page-wrapper img {
+    height: 30%;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 0px 4px 8px #0b4354;
+}
+
+.visagism-title-and-image-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.visagism-title-and-image-wrapper img {
+    height: 30%;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 0px 4px 8px #0b4354;
+}
+
+.simulate-visagism-text {
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.simulate-visagism-text p {
+    width: 100%;
+    line-height: 1.5;
+    font-size: 0.8em;
+    margin-bottom: 2em;
+}
+
+.simulate-visagism-text img {
+    height: 30%;
+    width: 100%;
+    box-shadow: 0px 4px 8px #0b4354;
+    margin-bottom: 1.5em;
+}
+
+.pacote-quartzo-rosa-wrapper {
+    padding: 2em;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+}
+.pacote-quartzo-rosa-wrapper img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgb(212, 11, 185);
+}
+
+.investiment-and-image {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1em;
+}
+
+.investiment-and-image h5 {
+    margin: 1em;
+    text-align: center;
+}
+
+.pacote-cristal-wrapper {
+    background-color: #ffffff;
+    color: #542f13;
+    text-align: center;
+    padding: 2em;
+    width: 100%;
+}
+
+.pacote-cristal-wrapper ul {
+    list-style: none;
+}
+
+.investimento-visagismo-cristal {
+    display: flex;
+    align-items: center;
+    padding-top: 2em;
+    justify-content: space-around;
+}
+
+.investimento-visagismo-cristal h5 {
+    margin: 1em;
+}
+
+.investimento-visagismo-cristal img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px #0b4354;
+}
+
+.pacote-esmeralda-wrapper {
+    background-color: #ffffff;
+    color: #542f13;
+    text-align: center;
+    padding: 2em;
+    width: 100%;
+}
+
+.pacote-esmeralda-investimento {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.pacote-esmeralda-investimento img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pacote-esmeralda-investimento h5 {
+    margin: 1em;
+}
