@@ -1,27 +1,50 @@
-import '../styles/visagismo.css';
-
-import cristal from '../assets/cristal.jpeg';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import Cristal from '../assets/cristal.jpeg';
 
 const PacoteCristalVisagismo = () => {
+    const [pacoteCristal, setPacoteCristal] = useState(null);
+
+    useEffect(() => {
+        axios
+            .get(`${import.meta.env.VITE_API_URL}/pacote-cristal`)
+            .then((response) => {
+                setPacoteCristal(response.data[0]);
+            })
+            .catch((error) => {
+                console.error(
+                    'Erro ao buscar detalhes do pacote Cristal:',
+                    error
+                );
+            });
+    }, []);
+
+    if (!pacoteCristal) {
+        return <div>Carregando...</div>;
+    }
+
     return (
         <div className='pacote-cristal-wrapper'>
-            <h3>PACOTE CRISTAL </h3>
+            <h3>{pacoteCristal.titulo}</h3>
+            <p>{pacoteCristal.descricao}</p>
+            <ul>
+                <br />
+                <p>
+                    <b>Inclusos:</b>
+                    {pacoteCristal.inclusos.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}
+                </p>
+                <br />
+            </ul>
             <p>
-                Nesse pacote irei te ajudar com o seu objetivo de imagem .
-                indicado para quem quer uma ajuda profissional para quem quer
-                fazer uma mudança estratégica. irei analisar a forma do seu
-                rosto , e simular 2 variações de corte de cabelo e 3 variações
-                de cores baseado na sua cartela caso você ja saiba sua coloração
-                pessoal e de forma aleatória para quem não sabe a cartela ( você
-                pode dar sugestão).
-            </p>
-            <p>
-                Inclusos: 2 simulação de corte 3 variações de cor PRAZO DE
-                ENTREGA 10 dias úteis para o visagismo.
+                <b>PRAZO DE ENTREGA:</b> {pacoteCristal.prazoEntrega}
             </p>
             <div className='investimento-visagismo-cristal'>
-                <h5>Investimento 3x 130,00 à vista: R$360,00</h5>
-                <img src={cristal} alt='cristal image' />
+                <p>
+                    <b>Investimento:</b> {pacoteCristal.investimento}
+                </p>
+                <img src={Cristal} alt='cristal image' />
             </div>
         </div>
     );

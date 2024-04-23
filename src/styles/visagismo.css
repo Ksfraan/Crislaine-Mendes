@@ -94,6 +94,10 @@ h3 {
     width: 100%;
 }
 
+.pacote-cristal-wrapper ul {
+    list-style: none;
+}
+
 .investimento-visagismo-cristal {
     display: flex;
     align-items: center;

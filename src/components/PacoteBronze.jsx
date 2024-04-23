@@ -1,41 +1,53 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import crisPhotoYellowDress from '../assets/crisPhotoYellowDress.png';
-
 import '../styles/coloracaoPessoal.css';
 
 const PacoteBronze = () => {
+    const [pacoteBronze, setPacoteBronze] = useState(null);
+
+    useEffect(() => {
+        axios
+            .get(`${import.meta.env.VITE_API_URL}/pacote-bronze`)
+            .then((response) => {
+                setPacoteBronze(response.data[0]);
+            })
+            .catch((error) => {
+                console.error(
+                    'Erro ao buscar detalhes do pacote Bronze:',
+                    error
+                );
+            });
+    }, []);
+
+    if (!pacoteBronze) {
+        return <div>Carregando...</div>;
+    }
+
     return (
         <div className='pacote-bronze-wrapper'>
-            <h3>PACOTE BRONZE COLORAÇÃO</h3>
-
-            <h5>COLORAÇÃO PESSOAL ONLINE</h5>
+            <h3>{pacoteBronze.titulo}</h3>
+            <h5>{pacoteBronze.subtitulo}</h5>
             <div className='pacote-bronze-description'>
                 <img src={crisPhotoYellowDress} alt='' />
                 <p>
-                    Análise de Contraste, <br />
-                    Análise de profundidade, <br />
-                    Analise de intensidade, <br />
-                    Análise de estação das cores explicação do círculo cromático
-                    e como combinar cores. <br />
-                    Dossiê com cartela digital, <br />
-                    Inspiração de combinação de cores, maquiagem, looks e
-                    cabelos da sua cartela e a psicologia das cores. <br />
-                    Cartela digital da sua estação. <br />
+                    {pacoteBronze.informacoes}
                     <br />
-                    <b>PRAZO DE ENTREGA:</b> 7 dias úteis.
+                    <br />
+                    <b>PRAZO DE ENTREGA:</b> {pacoteBronze.prazoEntrega}
                 </p>
             </div>
             <br />
             <div>
                 <p>
-                    3 meses de assessoria pós atendimento. <br />
+                    {pacoteBronze.assessoriaPosAtendimento}
                     <br />
-                    <b>Investimento: </b> <br />
-                    3X R$166,00 no cartão de crédito, <br /> R$480,00 crédito à
-                    vista,
                     <br />
-                    R$460,00 pix ou dinheiro. <br />
+                    <b>Investimento:</b> <br />
+                    {pacoteBronze.investimento}
                     <br />
-                    SEM SIMULAÇÃO DE CABELO
+                    <br />
+                    {pacoteBronze.simulacaoCabelo}
                 </p>
             </div>
         </div>
