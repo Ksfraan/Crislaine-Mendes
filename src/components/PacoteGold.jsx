@@ -3,10 +3,10 @@ import axios from 'axios';
 
 import crisPhotoGreenDress from '../assets/crisPhotoGreenDress.png';
 import Payment from './Payment';
+import { baseUrl } from '../constants/constants';
 
 const PacoteGold = () => {
     const [pacoteGold, setPacoteGold] = useState(null);
-    const baseUrl = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         const fetchPacoteGold = async () => {
@@ -22,7 +22,7 @@ const PacoteGold = () => {
     }, []);
 
     if (!pacoteGold) {
-        return <div>Carregando...</div>;
+        return <div>Carregando Pacote Gold...</div>;
     }
 
     return (
@@ -32,15 +32,15 @@ const PacoteGold = () => {
             <h5>{pacoteGold.descricao}</h5>
             <div>
                 {pacoteGold.inclusos && pacoteGold.inclusos.length > 0 ? (
-                    pacoteGold.inclusos.map((item, index) => (
-                        <p key={index}>{item}</p>
+                    pacoteGold.inclusos.map((item, id) => (
+                        <p key={id}>{item}</p>
                     ))
                 ) : (
                     <p>Falha ao carregar os itens do Pacote Gold.</p>
                 )}{' '}
                 <br />
                 <p>
-                    <b>Prazo de Entrega:</b> {pacoteGold.prazoEntrega}
+                    <b>PRAZO DE ENTREGA:</b> {pacoteGold.prazoEntrega}
                 </p>
                 <br />
                 <div>

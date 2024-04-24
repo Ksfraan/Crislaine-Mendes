@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import crisPhotoComTecidos from '../assets/crisPhotoComTecidos.png';
+import { baseUrl } from '../constants/constants';
 
 const PacoteJade = () => {
     const [pacoteJade, setPacoteJade] = useState(null);
-    const baseUrl = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         const fetchPacoteJade = async () => {
@@ -21,7 +21,7 @@ const PacoteJade = () => {
     }, []);
 
     if (!pacoteJade) {
-        return <div>Carregando...</div>;
+        return <div>Carregando Pacote Jade...</div>;
     }
 
     return (
@@ -32,7 +32,7 @@ const PacoteJade = () => {
             <div>{pacoteJade.descricao}</div>
             <br />
             <p>
-                <b>Prazo de Entrega:</b> {pacoteJade.prazoEntrega}
+                <b>PRAZO DE ENTREGA:</b> {pacoteJade.prazoEntrega}
             </p>
             <br />
             <div>

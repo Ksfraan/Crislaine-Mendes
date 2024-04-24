@@ -3,12 +3,11 @@ import facePaintingImage from '../assets/facePaintingImage.png';
 import PacoteCristalVisagismo from '../components/PacoteCristalVisagismo';
 import PacoteEsmeraldaVisagismo from '../components/PacoteEsmeraldaVisagismo';
 import PacoteQuartzoRosa from '../components/PacoteQuartzoRosa';
-
-import '../styles/visagismo.css';
 import PacoteAmetista from '../components/PacoteAmetista';
 import PacoteRuby from '../components/PacoteRuby';
 import PacoteJade from '../components/PacoteJade';
 
+import '../styles/visagismo.css';
 const Visagismo = () => {
     return (
         <div className='visagism-page-wrapper'>

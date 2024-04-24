@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import esmeralda from '../assets/esmeralda.jpeg';
+import { baseUrl } from '../constants/constants';
 
 const PacoteEsmeraldaVisagismo = () => {
     const [pacoteEsmeralda, setPacoteEsmeralda] = useState(null);
-    const baseUrl = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         const fetchPacoteEsmeralda = async () => {
@@ -24,7 +24,7 @@ const PacoteEsmeraldaVisagismo = () => {
     }, []);
 
     if (!pacoteEsmeralda) {
-        return <div>Carregando...</div>;
+        return <div>Carregando Pacote Esmeralda...</div>;
     }
 
     return (
@@ -35,18 +35,20 @@ const PacoteEsmeraldaVisagismo = () => {
                 <br />
                 <h4>Inclusos:</h4>
                 <ul>
-                    {pacoteEsmeralda.inclusos.map((item, index) => (
-                        <li key={index}>{item}</li>
+                    {pacoteEsmeralda.inclusos.map((item, id) => (
+                        <li key={id}>{item}</li>
                     ))}
                 </ul>
                 <br />
             </div>
             <p>
-                <b>Prazo de Entrega:</b> {pacoteEsmeralda.prazoEntrega}
+                <b>PRAZO DE ENTREGA:</b> {pacoteEsmeralda.prazoEntrega}
             </p>
             <br />
             <div className='pacote-esmeralda-investimento'>
-                <b>Investimento:</b> <p>{pacoteEsmeralda.investimento}</p>{' '}
+                <p>
+                    <b>Investimento:</b> {pacoteEsmeralda.investimento}
+                </p>{' '}
                 <img src={esmeralda} alt='esmeralda image' />
             </div>
         </div>

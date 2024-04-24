@@ -65,6 +65,11 @@ h3 {
     background-color: #ffffff;
     text-align: center;
 }
+
+.pacote-quartzo-rosa-wrapper ul {
+    list-style: none;
+}
+
 .pacote-quartzo-rosa-wrapper img {
     border-radius: 50%;
     width: 200px;

@@ -12,7 +12,7 @@ const Payment = () => {
             <Wallet
                 initialization={{
                     preferenceId:
-                        '47549966-4cfbddb0-2029-4ba1-a665-9e56599fa7f3',
+                        '47549966-1c20c395-6f3a-4cde-90e7-66a1156f40d0',
                 }}
                 customization={{ texts: { valueProp: 'security_safety' } }}
             />

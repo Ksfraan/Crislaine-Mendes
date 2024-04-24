@@ -1,26 +1,47 @@
-import quartzoRosa from '../assets/quartzoRosa.jpeg';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-import '../styles/visagismo.css';
+import quartzoRosa from '../assets/quartzoRosa.jpeg';
+import { baseUrl } from '../constants/constants';
 
 const PacoteQuartzoRosa = () => {
+    const [pacoteQuartzoRosa, setPacoteQuartzoRosa] = useState(null);
+
+    useEffect(() => {
+        const fetchPacoteQuartzoRosa = async () => {
+            try {
+                const response = await axios.get(
+                    `${baseUrl}/pacote-quartzoRosa`
+                );
+                setPacoteQuartzoRosa(response.data[0]);
+            } catch (error) {
+                console.error('Erro ao buscar informações do pacote:', error);
+            }
+        };
+        fetchPacoteQuartzoRosa();
+    }, []);
+
+    if (!pacoteQuartzoRosa) {
+        return <div>Carregando Pacote Quartzo Rosa...</div>;
+    }
+
     return (
         <div className='pacote-quartzo-rosa-wrapper'>
-            <h3>PACOTE QUARTZO ROSA</h3>
+            <h3>{pacoteQuartzoRosa.titulo}</h3>
 
-            <p>
-                Esse pacote é para quem quer algo básico. indicado para quem ja
-                sabe o que quer. irei analisar a forma do seu rosto , e simular
-                1 corte de cabelo e 2 variações de cores ( a sua escolha) ou da
-                sua coloração pessoal caso você saiba. não inclui armação de
-                óculos nem estrategia de imagem.
-            </p>
+            <ul>
+                {pacoteQuartzoRosa.descricao.map((info, id) => (
+                    <li key={id}>{info}</li>
+                ))}
+            </ul>
             <br />
             <p>
-                1 simulação de corte 2 variações de cor PRAZO DE ENTREGA 5 dias
-                úteis para o visagismo.
+                <b>PRAZO DE ENTREGA:</b> {pacoteQuartzoRosa.prazoEntrega}
             </p>
             <div className='investiment-and-image'>
-                <h5>Investimento 3x 83,30 à vista: R$220,00</h5>
+                <p>
+                    <b>Investimento:</b> {pacoteQuartzoRosa.investimento}
+                </p>
                 <img src={quartzoRosa} alt='' />
             </div>
         </div>

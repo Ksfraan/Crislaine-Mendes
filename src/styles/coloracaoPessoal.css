@@ -76,6 +76,10 @@
     align-items: center;
 }
 
+.pacote-bronze-description ul {
+    list-style: none;
+}
+
 .pacote-prata-wrapper {
     text-align: center;
     align-items: center;
@@ -90,6 +94,10 @@
     box-shadow: 0px 4px 8px #0b4354;
     margin-bottom: 1.5em;
     align-items: center;
+}
+
+.pacote-prata-description ul {
+    list-style: none;
 }
 
 .pacote-gold-wrapper {

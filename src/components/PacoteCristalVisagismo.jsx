@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cristal from '../assets/cristal.jpeg';
+import { baseUrl } from '../constants/constants';
 
 const PacoteCristalVisagismo = () => {
     const [pacoteCristal, setPacoteCristal] = useState(null);
 
     useEffect(() => {
         axios
-            .get(`${import.meta.env.VITE_API_URL}/pacote-cristal`)
+            .get(`${baseUrl}/pacote-cristal`)
             .then((response) => {
                 setPacoteCristal(response.data[0]);
             })
@@ -20,7 +21,7 @@ const PacoteCristalVisagismo = () => {
     }, []);
 
     if (!pacoteCristal) {
-        return <div>Carregando...</div>;
+        return <div>Carregando Pacote Cristal...</div>;
     }
 
     return (
@@ -31,8 +32,8 @@ const PacoteCristalVisagismo = () => {
                 <br />
                 <p>
                     <b>Inclusos:</b>
-                    {pacoteCristal.inclusos.map((item, index) => (
-                        <li key={index}>{item}</li>
+                    {pacoteCristal.inclusos.map((item, id) => (
+                        <li key={id}>{item}</li>
                     ))}
                 </p>
                 <br />

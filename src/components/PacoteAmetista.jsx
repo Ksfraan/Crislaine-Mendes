@@ -1,17 +1,29 @@
-import { useState, useEffect } from 'react';
-import crisPhotoFace from '../assets/crisPhotoFace.png';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
+import crisPhotoFace from '../assets/crisPhotoFace.png';
+import { baseUrl } from '../constants/constants';
 
 const PacoteAmetista = () => {
     const [detalhesPacote, setDetalhesPacote] = useState(null);
-    const baseUrl = import.meta.env.VITE_API_URL;
+    const [addedToCart, setAddedToCart] = useState(false);
+
+    const addToCart = async () => {
+        try {
+            const response = await axios.post(`${baseUrl}/carrinho/adicionar`, {
+                item: detalhesPacote,
+            });
+            console.log(response.data.message);
+            setAddedToCart(true);
+        } catch (error) {
+            console.error('Erro ao adicionar ao carrinho:', error);
+        }
+    };
 
     useEffect(() => {
         axios
             .get(`${baseUrl}/pacote-ametista`)
-
             .then((response) => {
-                setDetalhesPacote(response.data);
+                setDetalhesPacote(response.data[0]);
             })
             .catch((error) => {
                 console.error(
@@ -22,24 +34,32 @@ const PacoteAmetista = () => {
     }, [baseUrl]);
 
     if (!detalhesPacote) {
-        return <div>Carregando...</div>;
+        return <div>Carregando Pacote Ametista...</div>;
     }
 
     return (
         <div className='pacote-ametista-wrapper'>
-            <h3>{detalhesPacote[0].titulo}</h3>
-            <h5>{detalhesPacote[0].subtitulo}</h5>
+            <h3>{detalhesPacote.titulo}</h3>
+            <h5>{detalhesPacote.subtitulo}</h5>
             <img src={crisPhotoFace} alt='' />
             <div className='pacote-ametista-information'>
-                <p>{detalhesPacote[0].informacoes}</p>
+                <p>{detalhesPacote.informacoes}</p>
                 <br />
                 <p>
                     <b>PRAZO DE ENTREGA:</b>
-                    {detalhesPacote[0].prazoEntrega}.
+                    {detalhesPacote.prazoEntrega}.
                 </p>
+                <br />
                 <p>
-                    <b>Investimento:</b> {detalhesPacote[0].investimento}.
+                    <b>Investimento:</b> {detalhesPacote.investimento}.
                 </p>
+            </div>
+            <div className='consultoria-item'>
+                {addedToCart ? (
+                    <p>Adicionado ao carrinho</p>
+                ) : (
+                    <button onClick={addToCart}>Adicionar ao Carrinho</button>
+                )}
             </div>
         </div>
     );
