@@ -1,23 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
+import { baseUrl } from '../constants/constants';
+import { useHandleClick } from '../context/HandleClick.context';
+import { useAddToCart } from '../context/AddToCart.context';
 import axios from 'axios';
 import crisPhotoFace from '../assets/crisPhotoFace.png';
-import { baseUrl } from '../constants/constants';
 
 const PacoteAmetista = () => {
     const [detalhesPacote, setDetalhesPacote] = useState(null);
     const [addedToCart, setAddedToCart] = useState(false);
-
-    const addToCart = async () => {
-        try {
-            const response = await axios.post(`${baseUrl}/carrinho/adicionar`, {
-                item: detalhesPacote,
-            });
-            console.log(response.data.message);
-            setAddedToCart(true);
-        } catch (error) {
-            console.error('Erro ao adicionar ao carrinho:', error);
-        }
-    };
+    const { addToCart } = useAddToCart();
+    const handleClick = useHandleClick();
 
     useEffect(() => {
         axios
@@ -31,7 +24,7 @@ const PacoteAmetista = () => {
                     error
                 );
             });
-    }, [baseUrl]);
+    }, []);
 
     if (!detalhesPacote) {
         return <div>Carregando Pacote Ametista...</div>;
@@ -55,11 +48,10 @@ const PacoteAmetista = () => {
                 </p>
             </div>
             <div className='consultoria-item'>
-                {addedToCart ? (
-                    <p>Adicionado ao carrinho</p>
-                ) : (
-                    <button onClick={addToCart}>Adicionar ao Carrinho</button>
-                )}
+                <button onClick={() => handleClick(detalhesPacote)}>
+                    Adicionar ao Carrinho
+                </button>
+                {addedToCart && <p>Adicionado ao carrinho!</p>}
             </div>
         </div>
     );

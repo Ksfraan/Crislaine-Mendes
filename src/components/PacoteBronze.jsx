@@ -1,11 +1,17 @@
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
+import { baseUrl } from '../constants/constants';
+import { useHandleClick } from '../context/HandleClick.context';
+import { useAddToCart } from '../context/AddToCart.context';
 import axios from 'axios';
 import crisPhotoYellowDress from '../assets/crisPhotoYellowDress.png';
 import '../styles/coloracaoPessoal.css';
-import { baseUrl } from '../constants/constants';
 
 const PacoteBronze = () => {
     const [pacoteBronze, setPacoteBronze] = useState(null);
+    const [addedToCart, setAddedToCart] = useState(false);
+    const { addToCart } = useAddToCart();
+    const handleClick = useHandleClick();
 
     useEffect(() => {
         axios
@@ -49,6 +55,10 @@ const PacoteBronze = () => {
                     <br />
                 </p>
             </div>
+            <button onClick={() => handleClick(pacoteBronze)}>
+                Adicionar ao Carrinho
+            </button>
+            {addedToCart && <p>Adicionado ao carrinho!</p>}
         </div>
     );
 };

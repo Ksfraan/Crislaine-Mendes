@@ -1,13 +1,23 @@
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import { baseUrl } from '../constants/constants';
 import { useFetchCart } from '../hooks/useFetchCart';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 import '../styles/Cart.css';
 
 const Cart = () => {
-    const { isLoading, cart, totalPrice } = useFetchCart();
-    console.log('🚀 ~ Cart ~ cart:', cart);
+    const {
+        isLoading,
+        cart: initialCart,
+        totalPrice,
+        fetchCart,
+    } = useFetchCart();
+    const [cart, setCart] = useState(initialCart);
+
+    useEffect(() => {
+        setCart(initialCart);
+    }, [initialCart]);
 
     const removeFromCart = async (product) => {
         const productId = product?.id;
@@ -15,6 +25,9 @@ const Cart = () => {
             await axios.post(`${baseUrl}/carrinho/remover`, {
                 itemId: productId,
             });
+            fetchCart();
+            const updatedCart = cart.filter((item) => item.id !== productId);
+            setCart(updatedCart);
         } catch (error) {
             console.error('Erro ao remover item do carrinho:', error);
         }
