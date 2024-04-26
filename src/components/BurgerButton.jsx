@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 import burguerButton from '../assets/burguerButton.png';
@@ -14,6 +14,10 @@ const BurgerButton = () => {
         setShowLinks(false);
     }, [location.pathname]);
 
+    useEffect(() => {
+        console.log('IM RENDERED');
+    });
+
     const toggleShowLinks = useCallback(() => {
         setShowLinks(!showLinks);
     }, [showLinks]);
@@ -25,8 +29,9 @@ const BurgerButton = () => {
             </button>
             {showLinks ? (
                 <div className='visagismo-coloracao-links-wrapper'>
-                    <Link to='/visagismo'>Visagismo Simulado</Link>
                     <Link to='/coloracao'>Coloração Pessoal</Link>
+                    <Link to='/visagismo'>Visagismo Simulado</Link>
+                    <Link to='/visagismoecoloracao'>Coloração/Visagismo</Link>
                     <Link to='/'>Sobre mim</Link>
                     <Link to='/carrinho'>Carrinho</Link>
                 </div>
@@ -35,4 +40,4 @@ const BurgerButton = () => {
     );
 };
 
-export default BurgerButton;
+export default memo(BurgerButton);

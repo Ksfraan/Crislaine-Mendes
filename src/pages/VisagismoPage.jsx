@@ -1,11 +1,6 @@
 import visagismoImage from '../assets/visagismoImage.png';
 import facePaintingImage from '../assets/facePaintingImage.png';
-import PacoteCristalVisagismo from '../components/PacoteCristalVisagismo';
-import PacoteEsmeraldaVisagismo from '../components/PacoteEsmeraldaVisagismo';
-import PacoteQuartzoRosa from '../components/PacoteQuartzoRosa';
-import PacoteAmetista from '../components/PacoteAmetista';
-import PacoteRuby from '../components/PacoteRuby';
-import PacoteJade from '../components/PacoteJade';
+import PacotesVisagismo from '../components/PacotesVisagismo';
 
 import '../styles/visagismo.css';
 const Visagismo = () => {
@@ -40,12 +35,7 @@ const Visagismo = () => {
                 </p>
             </div>{' '}
             <div className='pacotes-visagismo-wrapper'>
-                <PacoteQuartzoRosa />
-                <PacoteCristalVisagismo />
-                <PacoteEsmeraldaVisagismo />
-                <PacoteAmetista />
-                <PacoteRuby />
-                <PacoteJade />
+                <PacotesVisagismo />
             </div>
         </div>
     );

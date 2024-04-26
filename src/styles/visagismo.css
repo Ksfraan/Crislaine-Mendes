@@ -12,6 +12,8 @@ h3 {
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+    text-align: center;
+    padding: 2em;
 }
 
 .visagism-page-wrapper img {
@@ -19,6 +21,10 @@ h3 {
     width: 100%;
     padding: 1em;
     box-shadow: 0px 4px 8px #0b4354;
+}
+
+.visagism-page-wrapper ul {
+    list-style: none;
 }
 
 .visagism-title-and-image-wrapper {
@@ -59,59 +65,12 @@ h3 {
     margin-bottom: 1.5em;
 }
 
-.pacote-quartzo-rosa-wrapper {
-    padding: 2em;
-    width: 100%;
-    background-color: #ffffff;
-    text-align: center;
-}
-
-.pacote-quartzo-rosa-wrapper ul {
-    list-style: none;
-}
-
 .pacote-quartzo-rosa-wrapper img {
     border-radius: 50%;
     width: 200px;
     height: 200px;
     object-fit: cover;
     box-shadow: 0px 4px 8px rgb(212, 11, 185);
-}
-
-.investiment-and-image {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: center;
-    padding-top: 1em;
-}
-
-.investiment-and-image h5 {
-    margin: 1em;
-    text-align: center;
-}
-
-.pacote-cristal-wrapper {
-    background-color: #ffffff;
-    color: #542f13;
-    text-align: center;
-    padding: 2em;
-    width: 100%;
-}
-
-.pacote-cristal-wrapper ul {
-    list-style: none;
-}
-
-.investimento-visagismo-cristal {
-    display: flex;
-    align-items: center;
-    padding-top: 2em;
-    justify-content: space-around;
-}
-
-.investimento-visagismo-cristal h5 {
-    margin: 1em;
 }
 
 .investimento-visagismo-cristal img {
@@ -122,31 +81,9 @@ h3 {
     box-shadow: 0px 4px 8px #0b4354;
 }
 
-.pacote-esmeralda-wrapper {
-    background-color: #ffffff;
-    color: #542f13;
-    text-align: center;
-    padding: 2em;
-    width: 100%;
-}
-
-.pacote-esmeralda-wrapper ul {
-    list-style: none;
-}
-
-.pacote-esmeralda-investimento {
+.pacote-visagismo-investimento {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row-reverse;
-}
-
-.pacote-esmeralda-investimento img {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-.pacote-esmeralda-investimento h5 {
-    margin: 1em;
+    padding: 2em 2em;
 }

@@ -3,9 +3,9 @@ import { createContext, useContext } from 'react';
 import { useAddToCart } from './AddToCart.context';
 import PropTypes from 'prop-types';
 
-const HandleClickContext = createContext();
+const HandleAddToCart = createContext();
 
-export const HandleClickProvider = ({ children }) => {
+export const HandleAddToCartProvider = ({ children }) => {
     const { addToCart } = useAddToCart();
 
     const handleClick = (item) => {
@@ -17,13 +17,13 @@ export const HandleClickProvider = ({ children }) => {
     };
 
     return (
-        <HandleClickContext.Provider value={handleClick}>
+        <HandleAddToCart.Provider value={handleClick}>
             {children}
-        </HandleClickContext.Provider>
+        </HandleAddToCart.Provider>
     );
 };
 
-HandleClickProvider.propTypes = {
+HandleAddToCartProvider.propTypes = {
     children: PropTypes.node,
 };
-export const useHandleClick = () => useContext(HandleClickContext);
+export const useHandleClick = () => useContext(HandleAddToCart);

@@ -1,37 +1,49 @@
-import { Link } from 'react-router-dom';
+import axios from 'axios';
 import { baseUrl } from '../constants/constants';
 import { useFetchCart } from '../hooks/useFetchCart';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect, useCallback } from 'react';
+import Payment from '../components/Payment';
 
 import '../styles/Cart.css';
+import { CartItem } from '../components/CartItem';
 
 const Cart = () => {
-    const {
-        isLoading,
-        cart: initialCart,
-        totalPrice,
-        fetchCart,
-    } = useFetchCart();
+    const { isLoading, cart: initialCart, fetchCart } = useFetchCart();
     const [cart, setCart] = useState(initialCart);
+    console.log('🚀 ~ Cart ~ cart:', cart);
 
+    // To be used when removing items
+    // rather than re-fetching the whole cart again
     useEffect(() => {
         setCart(initialCart);
     }, [initialCart]);
 
-    const removeFromCart = async (product) => {
-        const productId = product?.id;
-        try {
-            await axios.post(`${baseUrl}/carrinho/remover`, {
-                itemId: productId,
-            });
-            fetchCart();
-            const updatedCart = cart.filter((item) => item.id !== productId);
-            setCart(updatedCart);
-        } catch (error) {
-            console.error('Erro ao remover item do carrinho:', error);
-        }
-    };
+    const removeFromCart = useCallback(
+        async (product) => {
+            const productId = product?.id;
+            try {
+                const response = await axios.post(
+                    `${baseUrl}/carrinho/remover`,
+                    {
+                        itemId: productId,
+                    }
+                );
+                console.log(response.data.message);
+                fetchCart();
+            } catch (error) {
+                console.error('Erro ao remover item do carrinho:', error);
+            }
+        },
+        [fetchCart]
+    );
+
+    const calculateTotalPrice = useCallback(() => {
+        const totalPrice = cart.reduce((acc, currentValue) => {
+            console.log('current: ', currentValue);
+            return currentValue ? acc + currentValue.prices : acc;
+        }, 0);
+        return totalPrice;
+    }, [cart]);
 
     if (isLoading) {
         return null;
@@ -42,21 +54,22 @@ const Cart = () => {
             <div className='cart-wrapper'>
                 <h2>Carrinho</h2>
                 {cart?.map((product) => (
-                    <div key={product?.id} className='cart-item'>
-                        <p>{product?.titulo}</p>
-                        <p>${product?.investimento}</p>
-                        <button onClick={() => removeFromCart(product)}>
-                            Remover
-                        </button>
-                    </div>
+                    <CartItem
+                        key={product?.id}
+                        product={product}
+                        removeFromCart={removeFromCart}
+                    />
                 ))}
                 {cart?.length === 0 && <p>O seu carrinho está vazio.</p>}
                 <p>
-                    <b>Total:</b> R$ {totalPrice}
+                    <b>Total:</b> R$ {calculateTotalPrice()}
                 </p>
-                <Link to='/checkout'>
-                    <button>Finalizar Compra</button>
-                </Link>
+                {cart?.length !== 0 && (
+                    <>
+                        <div>Finalizar Compra</div>
+                        <Payment />
+                    </>
+                )}
             </div>
         </div>
     );
