@@ -1,15 +1,10 @@
-import PacoteBronze from '../components/PacoteBronze';
-import PacotePrata from '../components/PacotePrata';
-import PacoteGold from '../components/PacoteGold';
-import PacoteRuby from '../components/PacoteRuby';
+import PacotesColoracaoPessoal from '../components/PacotesColoracaoPessoal';
 
 import crisImage from '../assets/crisImage.png';
 import crisPhotoCartelaCores from '../assets/crisPhotoCartelaCores.png';
 import crisPhotoRedPants from '../assets/crisPhotoRedPants.png';
 
 import '../styles/coloracaoPessoal.css';
-import PacoteAmetista from '../components/PacoteAmetista';
-import PacoteJade from '../components/PacoteJade';
 
 const ColoracaoPessoal = () => {
     return (
@@ -80,12 +75,7 @@ const ColoracaoPessoal = () => {
                     <b>INVERNO:</b> (FRIO, ESCURO OU INTENSO).
                 </p>
             </div>
-            <PacoteBronze />
-            <PacotePrata />
-            <PacoteGold />
-            <PacoteAmetista />
-            <PacoteRuby />
-            <PacoteJade />
+            <PacotesColoracaoPessoal />
         </div>
     );
 };

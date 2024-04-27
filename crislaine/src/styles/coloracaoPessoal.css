@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
     padding: 1em;
+    text-align: center;
 }
 
 .coloração-pessoal-wrapper img {
@@ -55,18 +56,6 @@
     align-items: center;
 }
 
-.pacote-bronze-wrapper {
-    text-align: center;
-    line-height: 1.5em;
-    padding: 1em;
-}
-
-.pacote-bronze-description {
-    text-align: center;
-    align-items: center;
-    line-height: 1.5em;
-}
-
 .pacote-bronze-description img {
     height: 30%;
     width: 100%;
@@ -76,11 +65,8 @@
     align-items: center;
 }
 
-.pacote-prata-wrapper {
-    text-align: center;
-    align-items: center;
-    line-height: 1.5em;
-    padding: 1em;
+.coloração-pessoal-investimento {
+    padding: 2em 2em;
 }
 
 .pacote-prata-description img {
@@ -92,13 +78,6 @@
     align-items: center;
 }
 
-.pacote-gold-wrapper {
-    text-align: center;
-    align-items: center;
-    line-height: 1.5em;
-    padding: 1em;
-}
-
 .pacote-gold-wrapper img {
     height: 30%;
     width: 100%;
@@ -106,14 +85,6 @@
     box-shadow: 0px 4px 8px #0b4354;
     margin-bottom: 1.5em;
     align-items: center;
-}
-
-.pacote-ametista-wrapper {
-    background-color: #ffffff;
-    text-align: center;
-    align-items: center;
-    line-height: 1.5em;
-    padding: 1em;
 }
 
 .pacote-ametista-wrapper img {
@@ -125,14 +96,6 @@
     align-items: center;
 }
 
-.pacote-ruby-wrapper {
-    background-color: #ffffff;
-    text-align: center;
-    align-items: center;
-    line-height: 1.5em;
-    padding: 1em;
-}
-
 .pacote-ruby-wrapper img {
     height: 30%;
     width: 100%;
@@ -140,14 +103,6 @@
     box-shadow: 0px 4px 8px #0b4354;
     margin-bottom: 1.5em;
     align-items: center;
-}
-
-.pacote-jade-wrapper {
-    background-color: #ffffff;
-    text-align: center;
-    align-items: center;
-    line-height: 1.5em;
-    padding: 1em;
 }
 
 .pacote-jade-wrapper img {
