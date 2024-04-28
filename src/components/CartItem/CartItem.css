@@ -1,0 +1,30 @@
+.cart-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.cart-item:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+
+.cart-item-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.cart-item-info span {
+  font-size: 0.7em;
+}
+
+.price {
+  width: fit-content;
+  padding: 0.3em;
+  background-color: black;
+  color: white;
+}

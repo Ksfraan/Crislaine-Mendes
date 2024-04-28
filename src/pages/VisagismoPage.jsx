@@ -1,8 +1,8 @@
 import visagismoImage from '../assets/visagismoImage.png';
 import facePaintingImage from '../assets/facePaintingImage.png';
 import PacotesVisagismo from '../components/PacotesVisagismo';
-
 import '../styles/visagismo.css';
+
 const Visagismo = () => {
     return (
         <div className='visagism-page-wrapper'>
