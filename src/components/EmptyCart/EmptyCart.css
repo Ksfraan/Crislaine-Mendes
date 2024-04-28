@@ -7,15 +7,21 @@
   align-items: center;
 }
 
+.empty-cart-content {
+  min-height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .empty-message {
   font-size: 1.2em;
-  margin-bottom: 2em;
 }
 
 .empty-image-container {
   width: 10em;
   height: 10em;
-  margin-bottom: 2em;
 }
 
 .empty-image-container img{

@@ -1,20 +1,29 @@
 import { Link } from 'react-router-dom';
 
-import CrisLogo from '../assets/crisMendes.png';
+import CrisLogo from '../assets/extended-logo.png';
 
 import '../styles/header.css';
+import BurgerButton from './BurgerButton/BurgerButton';
+import { CartIcon } from './CartIcon/CartIcon';
 
 const Header = () => {
     return (
-        <div className='header-wrapper'>
-            <Link to='/'>
-                <img
-                    src={CrisLogo}
-                    alt='Cris Mendes Logo'
-                    className='cris-mendes-header-logo'
-                />
-            </Link>
-        </div>
+        <header className='header-wrapper'>
+            <BurgerButton />
+            <div className='header-logo-container'>
+                <Link to='/'>
+                    <div className='header-logo-container'>
+                        <img
+                            className='header-logo'
+                            src={CrisLogo}
+                            alt='Cris Mendes Logo'
+                        />
+                    </div>
+                </Link>
+                <span className='logo-message'>Consultora De Imagem</span>
+            </div>
+            <CartIcon/>
+        </header>
     );
 };
 

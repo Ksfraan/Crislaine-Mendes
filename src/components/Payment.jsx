@@ -3,6 +3,8 @@ import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import PropTypes from 'prop-types';
 
 const Payment = ({ totalPrice }) => {
+
+    console.log('🚀 ~ Payment ~ totalPrice:', totalPrice);
     const publicKey = import.meta.env.VITE_MERCADO_PAGO_CHAVE;
 
     useEffect(() => {

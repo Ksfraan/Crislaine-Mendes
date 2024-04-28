@@ -7,7 +7,6 @@ import Visagismo from '../pages/VisagismoPage';
 import Coloracao from '../pages/ColoracaoPessoal';
 import VisagismoComColoracao from '../pages/VisagismoComColoracaoPessoal';
 import ErrorPage from '../pages/ErrorPage';
-import BurgerButton from './BurgerButton';
 import { PageViewWrapper } from './PageView/PageViewWrapper';
 import Cart from '../pages/Cart/Cart';
 
@@ -17,7 +16,6 @@ const App = () => {
     return (
         <>
             <div className='App-wrapper'>
-                <BurgerButton />
                 <Header />
                 <PageViewWrapper>
                     <Routes>

@@ -5,9 +5,11 @@ import './EmptyCart.css';
 export const EmptyCart = () => {
   return (
     <div className='empty-cart-wrapper'>
-      <span className='empty-message'>O seu carrinho <br/>está vazio</span>
-      <div className='empty-image-container'>
-        <img src={cactusImg} alt="Empty Cart Image Of Cactus" />
+      <div className='empty-cart-content'>
+        <span className='empty-message'>O seu carrinho <br/>está vazio</span>
+        <div className='empty-image-container'>
+          <img src={cactusImg} alt="Empty Cart Image Of Cactus" />
+        </div>
       </div>
       <Button to={'/'} label={'Voltar'} />
     </div>

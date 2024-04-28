@@ -1,0 +1,25 @@
+.burger-link-item {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  color: black;
+  text-align: center;
+  padding: 0 0.5em;
+  border-radius: 0.3em;
+}
+
+.burger-link-item:hover {
+  color: white;
+  background-color: black;
+}
+
+.icon-img-container {
+  width: 1.4em;
+  height: 1.3em;
+  margin-right: 0.5em;
+}
+
+.icon-img-container img {
+  height: 100%;
+}

@@ -71,7 +71,7 @@ const Cart = () => {
                                 <span>Sub total</span>
                                 <p className='total-text'><span className='currency'>R$</span> {totalPrice}</p>
                             </div>
-                            <Payment />
+                            <Payment totalPrice={totalPrice} />
                         </div>
                     </>
                 ) : (
