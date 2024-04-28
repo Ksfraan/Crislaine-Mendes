@@ -11,7 +11,7 @@ export const useFetchCart = () => {
         try {
             const response = await axios.get(`${baseUrl}/carrinho`);
             const cartData = response.data;
-            setCart(cartData);
+            setCart([...cartData]);
             setIsLoading(false);
         } catch (error) {
             setIsLoading(false);

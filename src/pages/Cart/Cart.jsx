@@ -42,7 +42,6 @@ const Cart = () => {
 
     const totalPrice = useMemo(() => {
         const result = cart.reduce((acc, currentValue) => {
-            console.log('current: ', currentValue);
             return currentValue ? acc + currentValue.prices : acc;
         }, 0);
         return result;

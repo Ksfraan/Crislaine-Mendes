@@ -1,0 +1,51 @@
+.product-card-wrapper {
+  background: rgb(2,0,36);
+  background: linear-gradient(45deg, rgba(121,9,94,1) 50%, rgba(0,212,255,1) 100%);
+  color: white;
+  position: relative;
+  width: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5em 2em;
+  border-radius: 1em;
+  margin-bottom: 5em;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1.5em 3em -1em;
+}
+
+.product-card-wrapper .title{
+  margin: 0 0 1em 0;
+}
+
+.product-card-wrapper button {
+  margin: 2em 0 0;
+  font-size: 1em;
+}
+
+.product-card-image-wrapper {
+  position: absolute;
+  top: -2em;
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+.product-card-image {
+  height: 100%;
+}
+
+.product-card-payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card-pay-option {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+}

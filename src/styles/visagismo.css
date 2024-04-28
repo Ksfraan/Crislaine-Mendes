@@ -16,15 +16,11 @@ h3 {
     padding: 2em;
 }
 
-.visagism-page-wrapper img {
+.visagism-page-image {
     height: 30%;
     width: 100%;
     padding: 1em;
     box-shadow: 0px 4px 8px #0b4354;
-}
-
-.visagism-page-wrapper ul {
-    list-style: none;
 }
 
 .visagism-title-and-image-wrapper {

@@ -11,8 +11,11 @@ import { PageViewWrapper } from './PageView/PageViewWrapper';
 import Cart from '../pages/Cart/Cart';
 
 import '../styles/App.css';
+import { useScrollToTop } from '../hooks/useScrollToTop';
 
 const App = () => {
+    // Automatic Scroll to top
+    useScrollToTop();
     return (
         <>
             <div className='App-wrapper'>

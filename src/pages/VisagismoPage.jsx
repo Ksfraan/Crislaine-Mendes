@@ -7,7 +7,7 @@ const Visagismo = () => {
     return (
         <div className='visagism-page-wrapper'>
             <h2>CONSULTORIA VISAGISMO SIMULADO</h2>
-            <img src={visagismoImage} alt='Young lady' />
+            <img className='visagism-page-image' src={visagismoImage} alt='Young lady' />
             <h1>PROPOSTA</h1>
             <div className='simulate-visagism-text'>
                 <h2>VISAGISMO SIMULADO</h2>
@@ -19,6 +19,7 @@ const Visagismo = () => {
                     REALÇAR A BELEZA DE FORMA INDIVIDUALIZADA.
                 </p>
                 <img
+                    className='visagism-page-image'
                     src={facePaintingImage}
                     alt='Young lady with face painting'
                 />{' '}

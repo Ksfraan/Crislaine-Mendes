@@ -1,4 +1,4 @@
-import VisagismoComColoracao from '../components/VisagismoComColoracao';
+import VisagismoComColoracao from "../components/VisagismoComColoracao/VisagismoComColoracao";
 
 const VisagismoComColoracaoPessoal = () => {
     return (

@@ -26,10 +26,6 @@ const BurgerButton = () => {
         setShowLinks(false);
     }, [location.pathname]);
 
-    useEffect(() => {
-        console.log('IM RENDERED');
-    });
-
     const toggleShowLinks = useCallback(() => {
         setShowLinks(!showLinks);
     }, [showLinks]);

@@ -6,10 +6,10 @@ export const CartItemsList = ({cart, removeFromCart}) => (
   <ul className='cart-items-list'>
       {/* eslint-disable-next-line react/prop-types */}
       {cart?.map((product, i) =>
-          <CartItem
-            key={`${product.id}-${i}`}
-            product={product} 
-            removeFromCart={removeFromCart} />
+        <CartItem
+        key={`${product.id}-${i}`}
+        product={product} 
+        removeFromCart={removeFromCart} />
       )}
   </ul>
 );
