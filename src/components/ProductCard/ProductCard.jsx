@@ -5,12 +5,8 @@ import { Button } from '../Button/Button';
 
 import './ProductCard.css';
 
-const initialCardLabel = '+ Adicionar ao Carrinho';
-
 export const ProductCard = ({ item, image }) => {
-    console.log('🚀 ~ ProductCard ~ image:', image);
     const [selectedPayment, setSelectedPayment] = useState('');
-    const [cardLabel, setCardLabel] = useState(initialCardLabel);
     const { addToCart } = useAddToCart();
 
     const handleAddToCart = useCallback(
@@ -32,12 +28,7 @@ export const ProductCard = ({ item, image }) => {
                     break;
             }
             addToCart(selectedItem);
-            setCardLabel('Adicionado!');
             setSelectedPayment('');
-
-            setTimeout(() => {
-                setCardLabel(initialCardLabel);
-            }, 1000);
         },
         [addToCart, selectedPayment]
     );
@@ -87,6 +78,7 @@ export const ProductCard = ({ item, image }) => {
                                     id='pix'
                                     name='paymentOption'
                                     value='pix'
+                                    checked={ selectedPayment === 'pix' }
                                     onChange={() => setSelectedPayment('pix')}
                                 />
                                 <label htmlFor='pix'>
@@ -100,6 +92,7 @@ export const ProductCard = ({ item, image }) => {
                                     id='creditCard'
                                     name='paymentOption'
                                     value='creditCard'
+                                    checked={ selectedPayment === 'creditCard' }
                                     onChange={() =>
                                         setSelectedPayment('creditCard')
                                     }
@@ -115,6 +108,7 @@ export const ProductCard = ({ item, image }) => {
                                     id='installments'
                                     name='paymentOption'
                                     value='installments'
+                                    checked={ selectedPayment === 'installments' }
                                     onChange={() =>
                                         setSelectedPayment('installments')
                                     }
@@ -130,7 +124,8 @@ export const ProductCard = ({ item, image }) => {
             )}
 
             <Button
-                label={cardLabel}
+                label={'+ Adicionar ao Carrinho'}
+                labelClicked={'Adicionado!'}
                 clickAction={() => handleAddToCart(item)}
             />
         </li>

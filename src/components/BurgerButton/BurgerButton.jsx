@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 
@@ -12,10 +12,10 @@ import aboutMe from '../../assets/about-me.png';
 import './/BurgerButton.css';
 import { Underline } from '../Underline/Underline';
 
-// todo: change to burger
 // eslint-disable-next-line react/prop-types
 const BurgerButton = () => {
     const [showLinks, setShowLinks] = useState(false);
+    const burgerRef = useRef();
     const location = useLocation();
     const burgerMenuClassNames = classNames(
         'visagismo-coloracao-links-wrapper',
@@ -26,12 +26,27 @@ const BurgerButton = () => {
         setShowLinks(false);
     }, [location.pathname]);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (burgerRef.current && !burgerRef.current.contains(event.target)) {
+                setShowLinks(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        document.addEventListener('touchstart', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+            document.removeEventListener('touchstart', handleClickOutside);
+        };
+    }, []);
+
     const toggleShowLinks = useCallback(() => {
         setShowLinks(!showLinks);
     }, [showLinks]);
 
     return (
-        <div className='burger-button__wrapper'>
+        <div className='burger-button__wrapper' ref={burgerRef}>
             <div 
                 className={classNames('burger-button', {'open': showLinks})} 
                 onClick={toggleShowLinks}>
