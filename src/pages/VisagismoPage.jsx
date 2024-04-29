@@ -1,13 +1,17 @@
 import visagismoImage from '../assets/visagismoImage.png';
 import facePaintingImage from '../assets/facePaintingImage.png';
-import PacotesVisagismo from '../components/PacotesVisagismo';
 import '../styles/visagismo.css';
+import Visagism from '../components/Visagism/Visagism';
 
 const Visagismo = () => {
     return (
         <div className='visagism-page-wrapper'>
             <h2>CONSULTORIA VISAGISMO SIMULADO</h2>
-            <img className='visagism-page-image' src={visagismoImage} alt='Young lady' />
+            <img
+                className='visagism-page-image'
+                src={visagismoImage}
+                alt='Young lady'
+            />
             <h1>PROPOSTA</h1>
             <div className='simulate-visagism-text'>
                 <h2>VISAGISMO SIMULADO</h2>
@@ -36,7 +40,7 @@ const Visagismo = () => {
                 </p>
             </div>{' '}
             <div className='pacotes-visagismo-wrapper'>
-                <PacotesVisagismo />
+                <Visagism />
             </div>
         </div>
     );

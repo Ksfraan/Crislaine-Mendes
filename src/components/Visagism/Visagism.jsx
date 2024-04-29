@@ -4,32 +4,32 @@ import { assignImage } from '../../components/Utils/imageUtils';
 
 import '../../components/VisagismoComColoracao/VisagismoComColoracao.css';
 
-const ColoracaoPessoal = () => {
+const Visagism = () => {
     const pacotes = usePacotesContext();
 
     if (!pacotes) {
-        return <div>Carregando Pacotes de Coloração Pessoal...</div>;
+        return <div>Carregando Visagismo Simulado...</div>;
     }
 
-    const pacotesColoracao = Object.values(pacotes).filter(
+    const pacotesVisagismo = Object.values(pacotes).filter(
         (pacote) =>
-            pacote.type === 'bronze' ||
-            pacote.type === 'prata' ||
-            pacote.type === 'gold'
+            pacote.type === 'cristal' ||
+            pacote.type === 'esmeralda' ||
+            pacote.type === 'quartzoRosa'
     );
 
     return (
         <div className='visagism-page-wrapper'>
             <h3 className='visagism-page-title'>
-                Pacotes de Coloração Pessoal
+                Pacotes de Visagismo Simulado
             </h3>
             {
                 <ul>
-                    {pacotesColoracao.map((item) => (
+                    {pacotesVisagismo.map((item) => (
                         <ProductCard
                             key={`${item.id}-${item.type}`}
+                            image={assignImage(item)}
                             item={item}
-                            assignImage={assignImage}
                         />
                     ))}
                 </ul>
@@ -38,4 +38,4 @@ const ColoracaoPessoal = () => {
     );
 };
 
-export default ColoracaoPessoal;
+export default Visagism;

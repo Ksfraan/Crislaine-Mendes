@@ -1,7 +1,8 @@
 import { usePacotesContext } from '../../context/Pacotes.context';
 import { ProductCard } from '../ProductCard/ProductCard';
+import { assignImage } from '../../components/Utils/imageUtils';
 
-import './VisagismoComColoracao.css';
+import '../VisagismoComColoracao/VisagismoComColoracao.css';
 
 const VisagismoComColoracao = () => {
     const pacotes = usePacotesContext();
@@ -14,11 +15,11 @@ const VisagismoComColoracao = () => {
         );
     }
 
-    const pacotesVisagismo = Object.values(pacotes).filter(
+    const pacotesVisagismoComColoracao = Object.values(pacotes).filter(
         (pacote) =>
-            pacote.type === 'ametista' ||
+            pacote.type === 'jade' ||
             pacote.type === 'ruby' ||
-            pacote.type === 'jade'
+            pacote.type === 'ametista'
     );
 
     return (
@@ -28,10 +29,11 @@ const VisagismoComColoracao = () => {
             </h3>
             {
                 <ul>
-                    {pacotesVisagismo.map((item) => (
+                    {pacotesVisagismoComColoracao.map((item) => (
                         <ProductCard
                             key={`${item.id}-${item.title}`}
                             item={item}
+                            image={assignImage(item.type)}
                         />
                     ))}
                 </ul>
