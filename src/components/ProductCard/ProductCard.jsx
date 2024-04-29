@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useCallback, useState } from 'react';
 import { useAddToCart } from '../../context/AddToCart.context';
@@ -17,7 +18,6 @@ import './ProductCard.css';
 import classNames from 'classnames';
 
 export const ProductCard = ({ item, image }) => {
-
     console.log('🚀 ~ ProductCard ~ item:', item);
     const [selectedPayment, setSelectedPayment] = useState('');
     const { addToCart } = useAddToCart();
@@ -86,10 +86,11 @@ export const ProductCard = ({ item, image }) => {
     );
 
     return (
-        <li className={classNames(
-            'product-card-wrapper',
-            { [item.type]: item?.type },
-        )}>
+        <li
+            className={classNames('product-card-wrapper', {
+                [item.type]: item?.type,
+            })}
+        >
             <div className='product-card-image-wrapper'>
                 <img
                     className='product-card-image'
@@ -142,8 +143,10 @@ export const ProductCard = ({ item, image }) => {
                                             id='pix'
                                             name='paymentOption'
                                             value='pix'
-                                            checked={ selectedPayment === 'pix' }
-                                            onChange={() => setSelectedPayment('pix')}
+                                            checked={selectedPayment === 'pix'}
+                                            onChange={() =>
+                                                setSelectedPayment('pix')
+                                            }
                                         />
                                         <label htmlFor='pix'>
                                             Pix: R${item.prices.pix}
@@ -156,7 +159,9 @@ export const ProductCard = ({ item, image }) => {
                                             id='creditCard'
                                             name='paymentOption'
                                             value='creditCard'
-                                            checked={ selectedPayment === 'creditCard' }
+                                            checked={
+                                                selectedPayment === 'creditCard'
+                                            }
                                             onChange={() =>
                                                 setSelectedPayment('creditCard')
                                             }
@@ -172,9 +177,14 @@ export const ProductCard = ({ item, image }) => {
                                             id='installments'
                                             name='paymentOption'
                                             value='installments'
-                                            checked={ selectedPayment === 'installments' }
+                                            checked={
+                                                selectedPayment ===
+                                                'installments'
+                                            }
                                             onChange={() =>
-                                                setSelectedPayment('installments')
+                                                setSelectedPayment(
+                                                    'installments'
+                                                )
                                             }
                                         />
                                         <label htmlFor='installments'>
