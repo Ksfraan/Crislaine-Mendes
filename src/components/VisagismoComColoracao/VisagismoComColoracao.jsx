@@ -21,19 +21,19 @@ const VisagismoComColoracao = () => {
             pacote.type === 'jade'
     );
 
-
     return (
         <div className='visagism-page-wrapper'>
-            <h1 className='visagism-page-title'>Pacotes Visagismo <br/> Com Coloração</h1>
+            <h3 className='visagism-page-title'>
+                Pacotes Visagismo <br /> Com Coloração
+            </h3>
             {
                 <ul>
-                    {
-                        pacotesVisagismo.map((item) => (
-                            <ProductCard 
-                                key={`${item.id}-${item.title}`}
-                                item={item}/>
-                        ))
-                    }
+                    {pacotesVisagismo.map((item) => (
+                        <ProductCard
+                            key={`${item.id}-${item.title}`}
+                            item={item}
+                        />
+                    ))}
                 </ul>
             }
         </div>

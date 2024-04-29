@@ -1,4 +1,4 @@
-import PacotesColoracaoPessoal from '../components/PacotesColoracaoPessoal';
+import ColoracaoPessoal from '../components/ColoraçãoPessoal/ColoracaoPessoal';
 
 import crisImage from '../assets/crisImage.png';
 import crisPhotoCartelaCores from '../assets/crisPhotoCartelaCores.png';
@@ -6,7 +6,7 @@ import crisPhotoRedPants from '../assets/crisPhotoRedPants.png';
 
 import '../styles/coloracaoPessoal.css';
 
-const ColoracaoPessoal = () => {
+const ColoracaoPessoalPage = () => {
     return (
         <div>
             <div className='coloração-pessoal-wrapper'>
@@ -75,9 +75,9 @@ const ColoracaoPessoal = () => {
                     <b>INVERNO:</b> (FRIO, ESCURO OU INTENSO).
                 </p>
             </div>
-            <PacotesColoracaoPessoal />
+            <ColoracaoPessoal />
         </div>
     );
 };
 
-export default ColoracaoPessoal;
+export default ColoracaoPessoalPage;

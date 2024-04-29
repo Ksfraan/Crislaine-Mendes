@@ -1,7 +1,11 @@
 .visagism-page-wrapper {
-  padding: 0 2em;
+    padding: 0 2em;
 }
 
 .visagism-page-title {
-  margin-bottom: 1em;
+    text-transform: uppercase;
+    color: rgb(4, 142, 169);
+    margin: 1em;
+    padding: 1em;
+    /* font-family: ; */
 }

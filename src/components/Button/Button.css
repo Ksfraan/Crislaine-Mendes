@@ -1,10 +1,10 @@
 .button-container {
-  width: 100%;
-  background-color: black;
-  border-radius: 0.7em;
-  padding: 1em 0;
-  margin: 1em 0;
-  text-decoration: none;
-  font-size: 1.2em;
-  color: white;
+    width: 100%;
+    background-color: rgb(4, 142, 169);
+    border-radius: 0.7em;
+    padding: 1em 0;
+    margin: 1em 0;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
 }
