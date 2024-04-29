@@ -2,12 +2,60 @@
 import { useCallback, useState } from 'react';
 import { useAddToCart } from '../../context/AddToCart.context';
 import { Button } from '../Button/Button';
+import bronzeImage from '../../assets/crisPhotoYellowDress.png';
+import silverImage from '../../assets/crisPhotoCartelaCores.png';
+import goldImage from '../../assets/crisPhotoGreenDress.png';
+import quartzoRosa from '../../assets/quartzoRosa.jpeg';
+import Cristal from '../../assets/cristal.jpeg';
+import esmeralda from '../../assets/esmeralda.jpeg';
+import jadeImage from '../../assets/crisPhotoComTecidos.png';
+import rubyImage from '../../assets/crisPhotoOrangeDress.png';
+import ametistaImage from '../../assets/crisPhotoFace.png';
 
 import './ProductCard.css';
 
 export const ProductCard = ({ item, image }) => {
     const [selectedPayment, setSelectedPayment] = useState('');
     const { addToCart } = useAddToCart();
+
+    const assignImage = useCallback((item) => {
+        let imageResult;
+        switch (item?.type) {
+            case 'bronze':
+                imageResult = bronzeImage;
+                break;
+            case 'prata':
+                imageResult = silverImage;
+                break;
+            case 'gold':
+                imageResult = goldImage;
+                break;
+            case 'quartzoRosa':
+                imageResult = quartzoRosa;
+                break;
+            case 'cristal':
+                imageResult = Cristal;
+                break;
+            case 'esmeralda':
+                imageResult = esmeralda;
+                break;
+            case 'ametista':
+                imageResult = ametistaImage;
+                break;
+            case 'ruby':
+                imageResult = rubyImage;
+                break;
+            case 'jade':
+                imageResult = jadeImage;
+                break;
+
+            default:
+                imageResult = silverImage;
+                break;
+        }
+
+        return imageResult;
+    }, []);
 
     const handleAddToCart = useCallback(
         (item) => {
@@ -38,7 +86,7 @@ export const ProductCard = ({ item, image }) => {
             <div className='product-card-image-wrapper'>
                 <img
                     className='product-card-image'
-                    src={image}
+                    src={assignImage(item)}
                     alt={`Product Card Image ${item.title}`}
                 />
             </div>
