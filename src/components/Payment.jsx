@@ -31,7 +31,7 @@ const Payment = ({ totalPrice, cart }) => {
         fetchPreferenceId();
     }, [cart]);
 
-    return (
+    return preferenceId ? (
         <div id='wallet_container'>
             <Wallet
                 initialization={{
@@ -41,7 +41,7 @@ const Payment = ({ totalPrice, cart }) => {
                 customization={{ texts: { valueProp: 'security_safety' } }}
             />
         </div>
-    );
+    ) : null;
 };
 
 Payment.propTypes = {
