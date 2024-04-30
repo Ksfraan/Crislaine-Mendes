@@ -14,7 +14,7 @@ const Payment = ({ totalPrice, cart }) => {
     useEffect(() => {
         const fetchPreferenceId = async () => {
             try {
-                const response = await axios.post('/preferences', {
+                const response = await axios.post('/preferencia', {
                     items: cart.map((item) => ({
                         title: item.title,
                         quantity: 1,
