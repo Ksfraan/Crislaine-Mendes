@@ -1,6 +1,6 @@
 import { usePacotesContext } from '../../context/Pacotes.context';
 import { ProductCard } from '../ProductCard/ProductCard';
-import { assignImage } from '../../components/Utils/imageUtils';
+import { assignImageToType } from '../../components/Utils/imageUtils';
 
 import '../../components/VisagismoComColoracao/VisagismoComColoracao.css';
 
@@ -28,7 +28,7 @@ const Visagism = () => {
                     {pacotesVisagismo.map((item) => (
                         <ProductCard
                             key={`${item.id}-${item.type}`}
-                            image={assignImage(item)}
+                            image={assignImageToType(item)}
                             item={item}
                         />
                     ))}

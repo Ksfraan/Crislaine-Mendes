@@ -22,7 +22,7 @@ export const ProductCard = ({ item, image }) => {
     const [selectedPayment, setSelectedPayment] = useState('');
     const { addToCart } = useAddToCart();
 
-    const assignImage = useCallback((item) => {
+    const assignImageToType = useCallback((item) => {
         let imageResult;
         switch (item?.type) {
             case 'bronze':
@@ -94,7 +94,7 @@ export const ProductCard = ({ item, image }) => {
             <div className='product-card-image-wrapper'>
                 <img
                     className='product-card-image'
-                    src={assignImage(item)}
+                    src={assignImageToType(item)}
                     alt={`Product Card Image ${item.title}`}
                 />
             </div>

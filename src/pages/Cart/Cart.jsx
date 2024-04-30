@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Loader } from '../../components/Loader/Loader'
-import { useFetchCart } from '../../hooks/useFetchCart'
+import { Loader } from '../../components/Loader/Loader';
+import { useFetchCart } from '../../hooks/useFetchCart';
 
 import './Cart.css';
 import { baseUrl } from '../../constants/constants';
@@ -48,35 +48,39 @@ const Cart = () => {
     }, [cart]);
 
     if (isLoading) {
-        return (<Loader/>);
+        return <Loader />;
     }
 
     return (
         <div className='cart-wrapper'>
             <div className='cart-title-wrapper'>
                 <span className='cart-title'>Carrinho</span>
-                { !isEmpty && (
+                {!isEmpty && (
                     <span className='cart-counter'>{`${cart?.length} items`}</span>
-                ) }
+                )}
                 <Underline />
             </div>
-            {
-                !isEmpty ? (
-                    <>
-                        <CartItemsList cart={cart} removeFromCart={removeFromCart} />
-                        <Underline/>
-                        <div className='cart-total-wrapper'>
-                            <div className='total-label'>
-                                <span>Sub total</span>
-                                <p className='total-text'><span className='currency'>R$</span> {totalPrice}</p>
-                            </div>
-                            <Payment totalPrice={totalPrice} />
+            {!isEmpty ? (
+                <>
+                    <CartItemsList
+                        cart={cart}
+                        removeFromCart={removeFromCart}
+                    />
+                    <Underline />
+                    <div className='cart-total-wrapper'>
+                        <div className='total-label'>
+                            <span>Sub total</span>
+                            <p className='total-text'>
+                                <span className='currency'>R$</span>{' '}
+                                {totalPrice}
+                            </p>
                         </div>
-                    </>
-                ) : (
-                    <EmptyCart/>
-                )
-            }
+                        <Payment totalPrice={totalPrice} cart={cart} />
+                    </div>
+                </>
+            ) : (
+                <EmptyCart />
+            )}
         </div>
     );
 };
