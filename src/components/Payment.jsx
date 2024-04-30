@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { baseUrl } from '../constants/constants';
 
 const Payment = ({ totalPrice, cart }) => {
     const publicKey = import.meta.env.VITE_MERCADO_PAGO_CHAVE;
@@ -14,7 +15,7 @@ const Payment = ({ totalPrice, cart }) => {
     useEffect(() => {
         const fetchPreferenceId = async () => {
             try {
-                const response = await axios.post('/preferencia', {
+                const response = await axios.post(`${baseUrl}/preferencia`, {
                     items: cart.map((item) => ({
                         title: item.title,
                         quantity: 1,
