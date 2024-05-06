@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #cbe2e9;
+    background-color: #e0efea;
     padding: 2em;
 }
 
@@ -16,10 +16,10 @@
     margin-bottom: 1.5em;
 }
 
-.homepage-wrapper h5 {
+.homepage-wrapper h6 {
     justify-content: center;
     text-align: center;
-    color: #0b4354;
+    color: #5cb1a5;
     margin-bottom: 0.5;
     font-size: 2em;
 }
@@ -33,6 +33,6 @@
 .jornada-cris-text {
     line-height: 1.5em;
     color: #0b4354;
-
     text-align: justify;
+    font-size: 1.3em;
 }

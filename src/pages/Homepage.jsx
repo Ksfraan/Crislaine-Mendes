@@ -1,4 +1,4 @@
-import CrisFoto from '../assets/crisFotoHomepage.jpeg';
+import CrisFoto from '../assets/crisPhotoCartelaCores.png';
 
 import '../styles/homepage.css';
 
@@ -6,9 +6,9 @@ const Homepage = () => {
     return (
         <>
             <div className='homepage-wrapper'>
-                <h5 className='ola-cris-mendes-text'>
+                <h6 className='ola-cris-mendes-text'>
                     OLÁ! PRAZER, EU SOU A CRIS!
-                </h5>
+                </h6>
                 <img src={CrisFoto} alt='Foto Cris Mendes' />
 
                 <p className='jornada-cris-text'>

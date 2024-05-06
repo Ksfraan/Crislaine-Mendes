@@ -18,13 +18,13 @@
     border: 2px solid black;
 }
 
-.product-card-wrapper.ametista{
+.product-card-wrapper.ametista {
     background: var(--amethyst-color);
 }
-.product-card-wrapper.jade{
+.product-card-wrapper.jade {
     background: var(--jade-color);
 }
-.product-card-wrapper.ruby{
+.product-card-wrapper.ruby {
     background: var(--ruby-color);
 }
 
@@ -36,7 +36,7 @@
 }
 
 .content-wrapper::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@
 }
 
 .content-wrapper::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 10%;
     left: 0;
@@ -105,7 +105,7 @@
     top: 0;
     right: 0;
     height: 2em;
-    margin: 0.5em 0.5em 0 ;
+    margin: 0.5em 0.5em 0;
 }
 
 .product-card-payment {
@@ -118,4 +118,35 @@
     width: 100%;
     display: flex;
     justify-content: left;
+}
+/* Bronze */
+
+.product-card-wrapper.bronze {
+    background-color: #e98b4e;
+}
+
+/* Prata */
+.product-card-wrapper.prata {
+    background-color: #e1e1e3;
+}
+
+/* Gold */
+
+.product-card-wrapper.gold {
+    background-color: #dbab2b;
+}
+
+/* Cristal */
+.product-card-wrapper.cristal {
+    background-color: #ebe9e4;
+}
+
+/* Esmeralda */
+.product-card-wrapper.esmeralda {
+    background-color: #358562;
+}
+
+/* Quartzo Rosa */
+.product-card-wrapper.quartzoRosa {
+    background-color: #f2afb2;
 }

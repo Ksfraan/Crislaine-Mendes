@@ -17,7 +17,7 @@ const Payment = ({ totalPrice, cart }) => {
             try {
                 const response = await axios.post(`${baseUrl}/preferencia`, {
                     items: cart.map((item) => ({
-                        title: item.title,
+                        title: item.title.toUpperCase(),
                         quantity: 1,
                         unit_price: item.prices,
                     })),
