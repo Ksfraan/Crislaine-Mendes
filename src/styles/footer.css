@@ -23,3 +23,7 @@
 .footer-lists-icons a {
     cursor: pointer;
 }
+.gem-icons-text {
+    text-align: center;
+    margin-top: 1em;
+}

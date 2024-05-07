@@ -1,0 +1,121 @@
+.user-profile-page-container {
+    width: 100%;
+    min-height: 76em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 5em;
+    margin-bottom: 1em;
+    object-fit: cover;
+    border: 3px solid #1f8aad;
+}
+
+/* Profile Name */
+.profile-name {
+    color: #0a7893;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #a6e0ee;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+/* Update Button */
+.update-button {
+    background-color: #0d8bb5;
+    color: white;
+    border: none;
+    border-radius: 0.4em;
+    padding: 0.8em 1.5em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.update-button:hover {
+    background-color: #3590bd;
+    transform: translateY(-2px);
+}
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(
+        79deg,
+        rgb(33, 112, 108) 0%,
+        rgb(50, 208, 192) 100%
+    );
+    padding: 8em;
+    color: white;
+    width: 100%;
+}
+
+/* Input Fields */
+.input-username {
+    border: 1px solid #ffffff;
+    border-radius: 0.4em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+/* Buttons inside Modal */
+.update-username,
+.close {
+    background-color: #137648;
+    color: white;
+    border: none;
+    border-radius: 0.4em;
+    padding: 0.8em 1.5em;
+    margin: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center;
+}
+
+.update-username:hover,
+.close:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+/* Playlist Link */
+.playlist-button {
+    background-color: #358194;
+    color: white;
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    border-radius: 0.4em;
+    margin-top: 2em;
+    display: inline-block;
+}
+.playlist-button:hover {
+    background-color: #358dbd;
+    transform: translateY(-2px);
+}
+/* Success and Error Messages */
+.success-message,
+.error-message {
+    color: #2890a7;
+    margin-bottom: 1em;
+}
+
+.error-message {
+    color: #35d1dc;
+}
+
+.user-profile-wrapper {
+    margin-right: 0.5em;
+}
+
+.user-profile-page-container form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}

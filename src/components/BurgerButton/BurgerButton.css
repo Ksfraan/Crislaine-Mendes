@@ -47,44 +47,44 @@
     transition: opacity 0.3s, max-height 0.5s ease-out, visibility 0s 0.5s;
 }
 
-.burger-button{
+.burger-button {
     width: 2em;
     height: 1.3em;
     position: relative;
     cursor: pointer;
     display: inline-block;
-  }
-  .burger-button span{
-    background-color:#000000;
+}
+.burger-button span {
+    background-color: #000000;
     position: absolute;
     border-radius: 1px;
-    transition: .2s ease;
-    width:100%;
+    transition: 0.2s ease;
+    width: 100%;
     height: 2px;
-  }
-  .burger-button span:nth-child(1){
-    top:0px;
+}
+.burger-button span:nth-child(1) {
+    top: 0px;
     left: 0px;
-  }
-  .burger-button span:nth-child(2){
-    top:0.6em;
+}
+.burger-button span:nth-child(2) {
+    top: 0.6em;
     left: 0px;
-  }
-  .burger-button span:nth-child(3){
-    bottom:0px;
+}
+.burger-button span:nth-child(3) {
+    bottom: 0px;
     left: 0px;
-  }
-  .burger-button.open span:nth-child(1){
+}
+.burger-button.open span:nth-child(1) {
     transform: rotate(45deg) scaleX(0.7);
     top: 0.65em;
     left: -0.5em;
-  }
-  .burger-button.open span:nth-child(2){
+}
+.burger-button.open span:nth-child(2) {
     transform: scale(0);
-    transition-duration: 50ms
-  }
-  .burger-button.open span:nth-child(3){
+    transition-duration: 50ms;
+}
+.burger-button.open span:nth-child(3) {
     transform: rotate(-45deg) scaleX(0.7);
     top: 0.65em;
     left: 0.4em;
-  }
+}

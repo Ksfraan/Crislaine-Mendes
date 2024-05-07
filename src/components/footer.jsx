@@ -28,10 +28,19 @@ const Footer = () => {
                             <img src={whatsAppIcon} alt='WhatsApp icon' />
                         </Link>
                     </li>
-                    <li>
-                        <a href="https://www.flaticon.com/free-icons/gem" title="gem icons">Gem icons created by Freepik - Flaticon</a>
-                    </li>
                 </ul>
+                <div className='gem-icons-text'>
+                    <ul>
+                        <li>
+                            <a
+                                href='https://www.flaticon.com/free-icons/gem'
+                                title='gem icons'
+                            >
+                                Gem icons created by Freepik - Flaticon
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     );

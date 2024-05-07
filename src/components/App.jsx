@@ -1,4 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
+import { PageViewWrapper } from './PageView/PageViewWrapper';
+import { useScrollToTop } from '../hooks/useScrollToTop';
+import { AuthProviderWrapper } from '../context/Auth.context';
 
 import Footer from './footer';
 import Header from './Header';
@@ -6,12 +9,14 @@ import HomePage from '../pages/Homepage';
 import ColoracaoPessoalPage from '../pages/ColoracaoPessoal';
 import VisagismoComColoracao from '../pages/VisagismoComColoracaoPessoal';
 import ErrorPage from '../pages/ErrorPage';
-import { PageViewWrapper } from './PageView/PageViewWrapper';
 import Cart from '../pages/Cart/Cart';
 
 import '../styles/App.css';
-import { useScrollToTop } from '../hooks/useScrollToTop';
 import VisagismoPage from '../pages/VisagismoPage';
+import IsPrivate from './IsPrivate';
+import UserProfilePage from '../pages/UserProfilePage';
+import LoginPage from '../pages/LoginPage';
+import SignupPage from '../pages/SignupPage';
 
 const App = () => {
     // Automatic Scroll to top
@@ -32,6 +37,16 @@ const App = () => {
                             path='/visagismoecoloracao'
                             element={<VisagismoComColoracao />}
                         />
+                        <Route
+                            path='/profile'
+                            element={
+                                <IsPrivate>
+                                    <UserProfilePage />
+                                </IsPrivate>
+                            }
+                        />
+                        <Route path='/login' element={<LoginPage />} />
+                        <Route path='/signup' element={<SignupPage />} />
                         <Route path='/carrinho' element={<Cart />} />
 
                         <Route path='*' element={<ErrorPage />} />
@@ -43,4 +58,10 @@ const App = () => {
     );
 };
 
-export default App;
+export default function AppWithAuthProvider() {
+    return (
+        <AuthProviderWrapper>
+            <App />
+        </AuthProviderWrapper>
+    );
+}

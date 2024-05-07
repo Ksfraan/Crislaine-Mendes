@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useContext } from 'react';
 import { Loader } from '../../components/Loader/Loader';
 import { useFetchCart } from '../../hooks/useFetchCart';
 
@@ -9,11 +10,13 @@ import Payment from '../../components/Payment';
 import { EmptyCart } from '../../components/EmptyCart/EmptyCart';
 import { Underline } from '../../components/Underline/Underline';
 import { CartItemsList } from '../../components/CartItemsList/CartItemsList';
+import { AuthContext } from '../../context/Auth.context';
 
 const Cart = () => {
     const { isLoading, cart: initialCart, fetchCart } = useFetchCart();
     const [cart, setCart] = useState(initialCart);
     const isEmpty = useMemo(() => cart.length === 0, [cart]);
+    const { user, setUser } = useContext(AuthContext);
 
     // To be used when removing items
     // rather than re-fetching the whole cart again
@@ -54,9 +57,9 @@ const Cart = () => {
     return (
         <div className='cart-wrapper'>
             <div className='cart-title-wrapper'>
-                <span className='cart-title'>Carrinho</span>
+                <span className='cart-title'>Carrinho de {user.name}:</span>
                 {!isEmpty && (
-                    <span className='cart-counter'>{`${cart?.length} items`}</span>
+                    <span className='cart-counter'>{`${cart?.length} itens`}</span>
                 )}
                 <Underline />
             </div>
